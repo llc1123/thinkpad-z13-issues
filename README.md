@@ -23,7 +23,7 @@
 打开 `edge://flags/#enable-media-foundation-clear` 选项使用 Media Foundation 进行视频渲染。
 
 ### 雷电 Dock 在锁屏界面无法使用 USB
-由于 Windows 新加入的安全机制 [内核 DMA 保护](https://docs.microsoft.com/zh-cn/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)，不支持 DMA 重映射的驱动会被禁止加载。对于使用 ASMedia USB3.0 主控的设备，安装最新版本驱动即可解决（OEM 提供的驱动未必最新）。如果没有合适的驱动，可以去组策略中将 `计算机配置 - 管理模板 - 系统 - 内核 DMA 保护 - 与内核 DMA 保护不兼容的外部设备的枚举策略` 设置为 `允许所有`。
+由于 Windows 新加入的安全机制 [内核 DMA 保护](https://docs.microsoft.com/zh-cn/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)，不支持 DMA 重映射的驱动会被禁止加载。对于使用 ASMedia USB3.0 主控的设备，安装最新版本驱动即可解决（OEM 提供的驱动未必最新）。如果没有合适的驱动，可以去组策略中将 `计算机配置/管理模板/系统/内核 DMA 保护/与内核 DMA 保护不兼容的外部设备的枚举策略` 设置为 `允许所有`。
 
 ### 我想要极致的安全性
 在 BIOS 的 Security 选项卡中进行以下设置：
@@ -38,11 +38,16 @@
 - Fingerprint - Password Authentication - On
 - Security Chip - Security Chip Selection - Pluton TPM 2.0
 - Security Chip - Security Chip - On
-- Security Chip - Physical Presence for Clear - On
 - Security Chip - Microsoft Pluton Processor Control - Enabled
 - Memory Protection - Execution Prevention - On
 - Virtualization - Enhanced Windows Biometric Security - On
 - Device Guard - Device Guard - On
+
+将组策略 `计算机配置/管理模板/系统/Device Guard/打开基于虚拟化的安全` 设置为：
+- 选择平台安全级别 - 安全启动和DMA保护
+- 基于虚拟化的代码完整性保护 - 使用 UEFI 锁启用
+- Credential Guard 配置 - 使用 UEFI 锁启用
+- 安全启动配置 - 已启用
 
 ### 从待机恢复后触控板有迟滞，手指不动时指针漂移
 待解决
