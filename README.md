@@ -17,7 +17,8 @@
 因为前面的原因 TPM 被重置，Windows Hello 数据被从 TPM 中移出，需要确保 TPM 被打开的前提下，使用 `certutil -DeleteHelloContainer` 并注销清空 Hello 数据并重新设置。
 
 ### OLED 屏幕过饱和
-常开 HDR 模式即可。
+常开 HDR 模式即可。  
+或者在 AMD 核显驱动中打开自定义颜色，并关闭色温控制。此时 SDR 模式为 sRGB 色域，HDR 模式不受影响，可按需切换。
 
 ### Microsoft Edge 看 4K HDR 视频掉帧
 打开 `edge://flags/#enable-media-foundation-clear` 选项使用 Media Foundation 进行视频渲染。
