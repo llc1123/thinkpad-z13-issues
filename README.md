@@ -44,7 +44,7 @@
 - Device Guard - Device Guard - On
 
 将组策略 `计算机配置/管理模板/系统/Device Guard/打开基于虚拟化的安全` 设置为：
-- 选择平台安全级别 - 安全启动和DMA保护
+- 选择平台安全级别 - 安全启动和 DMA 保护
 - 基于虚拟化的代码完整性保护 - 使用 UEFI 锁启用
 - Credential Guard 配置 - 使用 UEFI 锁启用
 - 安全启动配置 - 已启用
