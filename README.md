@@ -25,6 +25,25 @@
 ### 雷电 Dock 在锁屏界面无法使用 USB
 由于 Windows 新加入的安全机制 [内核 DMA 保护](https://docs.microsoft.com/zh-cn/windows/security/information-protection/kernel-dma-protection-for-thunderbolt)，不支持 DMA 重映射的驱动会被禁止加载。对于使用 ASMedia USB3.0 主控的设备，安装最新版本驱动即可解决（OEM 提供的驱动未必最新）。如果没有合适的驱动，可以去组策略中将 `计算机配置 - 管理模板 - 系统 - 内核 DMA 保护 - 与内核 DMA 保护不兼容的外部设备的枚举策略` 设置为 `允许所有`。
 
+### 我想要极致的安全性
+在 BIOS 的 Security 选项卡中进行以下设置：
+- TSME - On
+- Password - Supervisor Password - 设置管理员密码
+- Password - Block SID Authentication - On
+- Password - Lock UEFI BIOS Settings - On
+- Password - Password at Unattended Boot - On
+- Password - Password at Boot Device List - On
+- Fingerprint - Predesktop Authenticaton - On
+- Fingerprint - Security Mode - High
+- Fingerprint - Password Authentication - On
+- Security Chip - Security Chip Selection - Pluton TPM 2.0
+- Security Chip - Security Chip - On
+- Security Chip - Physical Presence for Clear - On
+- Security Chip - Microsoft Pluton Processor Control - Enabled
+- Memory Protection - Execution Prevention - On
+- Virtualization - Enhanced Windows Biometric Security - On
+- Device Guard - Device Guard - On
+
 ### 从待机恢复后触控板有迟滞，手指不动时指针漂移
 待解决
 
