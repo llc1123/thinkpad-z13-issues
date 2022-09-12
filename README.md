@@ -1,4 +1,4 @@
-### 装 Windows 11，无法加入网络
+### 安装 Windows 11，无法加入网络
 官方 Windows 安装镜像缺少无线网卡驱动，可通过 `Shift-F10` 打开命令行使用 `OOBE\BYPASSNRO` 强制跳过联网步骤，或者插个 USB 网卡。
 
 ### 安装 Windows 11，强制要求登录微软账号
