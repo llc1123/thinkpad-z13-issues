@@ -50,6 +50,13 @@
 - Credential Guard 配置 - 使用 UEFI 锁启用
 - 安全启动配置 - 已启用
 
+### Enhanced Windows Biometric Security 正确开启方法
+如果在该 BIOS 选项打开之前已经设置了 Windows Hello，需要清除 Windows Hello 数据后重新登录（方法见上文）。
+
+此时 `certutil -csp "Microsoft Passport Key Storage Provider" -key -v | Select-String -Pattern "NgcKeyImplType"` 应显示代码 33。  
+
+已知问题：打开该选项后人脸识别不可用。
+
 ### 插电待机时不定时自己开机并且风扇满转速，拔电后自动进入待机
 推测是后台进行文件索引，不用理会即可。
 
