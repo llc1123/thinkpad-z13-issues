@@ -1,5 +1,8 @@
 ### 安装 Windows 11，无法加入网络
-官方 Windows 安装镜像缺少无线网卡驱动，可通过 `Shift-F10` 打开命令行使用 `OOBE\BYPASSNRO` 强制跳过联网步骤，或者插个 USB 网卡。
+官方 Windows 安装镜像缺少无线网卡驱动，可通过以下方式解决：
+- 插个 USB 网卡
+- 通过 `Shift-F10` 打开命令行使用 `OOBE\BYPASSNRO` 强制跳过联网步骤
+- 在 U 盘中提前准备好[无线网卡驱动](https://download.lenovo.com/pccbbs/mobiles/n3gw208p.exe)，在 `Shift-F10` 中的命令行窗口中运行安装
 
 ### 安装 Windows 11，强制要求登录微软账号
 如果希望使用本地账户，可以使用 `test@test.com` 或 `a@b.com` 密码任意，直接进入下一步创建本地账户。
@@ -17,7 +20,7 @@
 因为前面的原因 TPM 被重置，Windows Hello 数据被从 TPM 中移出，需要确保 TPM 被打开的前提下，使用 `certutil -DeleteHelloContainer` 并注销清空 Hello 数据并重新设置。
 
 ### OLED 屏幕过饱和
-常开 HDR 模式即可。  
+**推荐：** 常开 HDR 模式即可。  
 或者在 AMD 核显驱动中打开自定义颜色，并关闭色温控制。此时 SDR 模式为 sRGB 色域，HDR 模式不受影响，可按需切换。
 
 ### Microsoft Edge 看 4K HDR 视频掉帧
