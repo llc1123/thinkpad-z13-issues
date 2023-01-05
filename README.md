@@ -1,5 +1,6 @@
 ### 安装 Windows 11，无法加入网络
 官方 Windows 安装镜像缺少无线网卡驱动，可通过以下方式解决：
+- **推荐：** 使用联想提供的恢复镜像重装系统
 - 插个 USB 网卡
 - 通过 `Shift-F10` 打开命令行使用 `OOBE\BYPASSNRO` 强制跳过联网步骤
 - 在 U 盘中提前准备好[无线网卡驱动](https://download.lenovo.com/pccbbs/mobiles/n3gw208p.exe)，在 `Shift-F10` 中的命令行窗口中运行安装
@@ -58,13 +59,13 @@
 
 此时 `certutil -csp "Microsoft Passport Key Storage Provider" -key -v | Select-String -Pattern "NgcKeyImplType"` 应显示代码 33。  
 
-已知问题：打开该选项后人脸识别不可用。
+~已知问题：打开该选项后人脸识别不可用。~   
+2023.01.04更新：最新版固件已修复
 
 ### 插电待机时不定时自己开机并且风扇满转速，拔电后自动进入待机
 推测是后台进行文件索引，不用理会即可。
 
-### 从待机恢复后触控板有迟滞，手指不动时指针漂移
-待解决  
+### ~从待机恢复后触控板有迟滞，手指不动时指针漂移~
 2022.10.14 更新：固件更新已修复
 
 ### USB4 与 HP Elite Thunderbolt 3 65W Dock 的兼容性汇总：
